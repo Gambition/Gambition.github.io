@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
+    <script src="js/jquery.js"></script>
+    <script>
+$(function() {
+    $('a[href*=#]:not([href=#])').click(function() {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
+        if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+        }
+    });
+});
+    </script>
+<head> 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +42,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
 <body>
@@ -213,11 +225,11 @@
               <div class="row">
                 <div class="col-lg-5  col-sm-6 experiecneSection">
                     <h2>Personal Website</h2>
-                   <p>I am currently working on my personal portfolio website. It is based on a responsive framework called Bootstrap and hosted on github. I am learing Ruby on Rails and trying to implement a personal blog system with RoR. <br></p>
+                   <p>I am currently working on my personal portfolio website. It is based on a responsive framework called Bootstrap and hosted on github. I am implementing a blog system with Python Flask and MongoDB <br></p>
                     <ul type = "disc">
                         <li>HTML / CSS / JavaScript</li>
                         <li>Web Design</li>
-                        <li>Ruby on Rails</li>
+                        <li>Python</li>
                     </ul>
                 </div>
                   <br><br>
